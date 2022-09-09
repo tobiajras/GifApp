@@ -6,7 +6,7 @@ import { useFetchGifs } from './hooks/useFetchGifs';
 const GifGrid = ({ category }) => {
   const { data: images, loading } = useFetchGifs(category);
 
-  if (!loading && images.length < 1 && category != '') {
+  if (!loading && images.length < 1 && category !== '') {
     return (
       <>
         <Typography
