@@ -1,5 +1,4 @@
 import { Alert, AlertTitle, LinearProgress, Typography } from '@mui/material';
-import { Container, flexbox } from '@mui/system';
 import React from 'react';
 import { GifGridItem } from './GifGridItem';
 import { useFetchGifs } from './hooks/useFetchGifs';

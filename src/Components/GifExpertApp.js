@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AddCategory from './AddCategory';
 import GifGrid from './GifGrid';
 
-import { Alert, AppBar, Container, Toolbar, Typography } from '@mui/material';
+import { Alert, Container } from '@mui/material';
 
 const GifExpertApp = () => {
   // const categories = ["One Punch", "Samurai X", "Dragon Ball"];

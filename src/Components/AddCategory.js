@@ -28,6 +28,9 @@ export const AddCategory = ({ setCategories }) => {
           onChange={handleInputChange}
           autoFocus
           fullWidth
+          sx={{
+            mt: 2,
+          }}
         />
       </form>
       <Button
