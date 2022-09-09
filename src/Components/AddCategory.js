@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, TextField } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SearchIcon from '@mui/icons-material/Search';
 
 export const AddCategory = ({ setCategories }) => {
   const [inputValue, setInputValue] = useState('');
@@ -34,21 +36,36 @@ export const AddCategory = ({ setCategories }) => {
         />
       </form>
       <Button
+        onClick={handleSubmit}
+        variant='contained'
+        color='success'
+        sx={{
+          fontWeight: '600',
+          my: 2,
+          mr: 2,
+        }}
+      >
+        <SearchIcon sx={{ color: 'white', pr: 0.5 }} />
+        Search
+      </Button>
+      <Button
         onClick={() => {
           setCategories([]);
         }}
         variant='contained'
-        color='primary'
+        color='danger'
         sx={{
+          fontWeight: '600',
           my: 2,
+          color: 'white',
         }}
       >
+        <DeleteIcon sx={{ color: 'white', pr: 0.5 }} />
         Clear
       </Button>
     </div>
   );
 };
-
 AddCategory.propTypes = {
   setCategories: PropTypes.func.isRequired,
 };

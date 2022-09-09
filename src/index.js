@@ -23,6 +23,14 @@ const theme = createTheme({
     background: {
       main: '#0D0D0D',
     },
+    danger: {
+      main: '#D1180A',
+      dark: '#A80000',
+    },
+    success: {
+      main: '#1AA918',
+      dark: '#346F33',
+    },
   },
 });
 

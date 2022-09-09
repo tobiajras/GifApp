@@ -6,7 +6,7 @@ import { useFetchGifs } from './hooks/useFetchGifs';
 const GifGrid = ({ category }) => {
   const { data: images, loading } = useFetchGifs(category);
 
-  if (!loading && images.length < 1) {
+  if (!loading && images.length < 1 && category != '') {
     return (
       <>
         <Typography
@@ -16,13 +16,24 @@ const GifGrid = ({ category }) => {
         >
           {category}
         </Typography>
-        <Alert sx={{ display: 'flex', width: '100%' }} severity='error'>
+        <Alert sx={{ display: 'flex', width: '100%', mb: 2 }} severity='error'>
           <AlertTitle>
             <strong>No results</strong>
           </AlertTitle>
           Please do another Search
         </Alert>
       </>
+    );
+  }
+
+  if (category === '') {
+    return (
+      <Alert sx={{ display: 'flex', width: '100%', mb: 2 }} severity='error'>
+        <AlertTitle>
+          <strong>Empty Search</strong>
+        </AlertTitle>
+        Please do a Search
+      </Alert>
     );
   }
 
