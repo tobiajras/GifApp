@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import GifExpertApp from './Components/GifExpertApp';
 import './index.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { NotFound404 } from './Components/NotFound404';
+import { Navbar } from './Components/Navbar';
 
 const theme = createTheme({
   palette: {
@@ -24,7 +28,13 @@ const theme = createTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <GifExpertApp />
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<GifExpertApp />} />
+        <Route path='*' element={<NotFound404 />} />
+      </Routes>
+    </BrowserRouter>
   </ThemeProvider>,
   document.getElementById('root')
 );

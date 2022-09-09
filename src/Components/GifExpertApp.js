@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AddCategory from './AddCategory';
 import GifGrid from './GifGrid';
 
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
+import { Alert, AppBar, Container, Toolbar, Typography } from '@mui/material';
 
 const GifExpertApp = () => {
   // const categories = ["One Punch", "Samurai X", "Dragon Ball"];
@@ -17,34 +17,29 @@ const GifExpertApp = () => {
 
   return (
     <>
-      <Toolbar>
-        <AppBar
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            px: 5,
-            py: 2,
-          }}
-          color='background'
-        >
-          <Typography color='primary' fontSize={'30px'}>
-            GifApp
-          </Typography>
-          <Typography color='primary' fontSize={'25px'}>
-            Tobias Ajras
-          </Typography>
-        </AppBar>
-      </Toolbar>
       <AddCategory setCategories={setCategories} />
       <hr />
 
-      <Container>
-        {categories.map((category) => {
-          return <GifGrid key={category} category={category} />;
-        })}
-      </Container>
+      {categories.length >= 1 ? (
+        categories.map((category, i) => {
+          return (
+            <Container key={i}>
+              <GifGrid category={category} />
+            </Container>
+          );
+        })
+      ) : (
+        <Alert
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+          }}
+          severity='info'
+        >
+          Please do a Search
+        </Alert>
+      )}
     </>
   );
 };

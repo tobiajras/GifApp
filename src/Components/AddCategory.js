@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 export const AddCategory = ({ setCategories }) => {
   const [inputValue, setInputValue] = useState('');
@@ -11,27 +11,38 @@ export const AddCategory = ({ setCategories }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (inputValue.trim().length > 0) {
-      setCategories((cats) => [inputValue, ...cats]);
-      setInputValue('');
-    }
+    setCategories((cats) => [inputValue, ...cats]);
+    setInputValue('');
   };
 
   return (
-    <form className='formInput' onSubmit={handleSubmit}>
-      <TextField
-        color='background'
-        id='filled-basic'
-        label='Search Gif'
-        variant='outlined'
-        type='text'
-        value={inputValue}
-        onChange={handleInputChange}
-        autoFocus
-        fullWidth
-      />
-    </form>
+    <div>
+      <form className='formInput' onSubmit={handleSubmit}>
+        <TextField
+          color='background'
+          id='filled-basic'
+          label='Search Gif'
+          variant='outlined'
+          type='text'
+          value={inputValue}
+          onChange={handleInputChange}
+          autoFocus
+          fullWidth
+        />
+      </form>
+      <Button
+        onClick={() => {
+          setCategories([]);
+        }}
+        variant='contained'
+        color='primary'
+        sx={{
+          my: 2,
+        }}
+      >
+        Clear
+      </Button>
+    </div>
   );
 };
 
