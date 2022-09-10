@@ -26,17 +26,6 @@ const GifGrid = ({ category }) => {
     );
   }
 
-  if (category === '') {
-    return (
-      <Alert sx={{ display: 'flex', width: '100%', mb: 2 }} severity='error'>
-        <AlertTitle>
-          <strong>Empty Search</strong>
-        </AlertTitle>
-        Please do a Search
-      </Alert>
-    );
-  }
-
   return (
     <>
       <Typography
