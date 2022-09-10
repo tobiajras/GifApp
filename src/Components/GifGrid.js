@@ -32,6 +32,11 @@ const GifGrid = ({ category }) => {
         color='background'
         className='animate__animated animate__fadeIn'
         fontSize={'30px'}
+        sx={{}}
+        width='90%'
+        borderBottom='6px solid #F2CA52'
+        pl={2}
+        my={2}
       >
         {category}
       </Typography>
