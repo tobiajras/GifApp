@@ -18,7 +18,9 @@ const GifExpertApp = () => {
   return (
     <>
       <AddCategory setCategories={setCategories} />
-      <hr />
+      <Container>
+        <hr />
+      </Container>
 
       {categories.length >= 1 ? (
         categories.map((category, i) => {

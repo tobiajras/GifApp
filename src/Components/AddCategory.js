@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, TextField } from '@mui/material';
+import { Button, Container, TextField } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -20,7 +20,7 @@ export const AddCategory = ({ setCategories }) => {
   };
 
   return (
-    <div>
+    <Container>
       <form className='formInput' onSubmit={handleSubmit}>
         <TextField
           color='background'
@@ -64,7 +64,7 @@ export const AddCategory = ({ setCategories }) => {
         <DeleteIcon sx={{ color: 'white', pr: 0.5 }} />
         Clear
       </Button>
-    </div>
+    </Container>
   );
 };
 AddCategory.propTypes = {
