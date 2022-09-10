@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 export const GifGridItem = ({ id, title, url }) => {
   return (
-    <Card sx={{ maxWidth: 350, m: 1 }}>
+    <Card sx={{ maxWidth: 350, my: 2, mx: 1 }}>
       <CardMedia component='img' alt='gif' height='300' image={url} />
       <CardContent>
         <Typography variant='body2' color='text.secondary'>

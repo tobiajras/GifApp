@@ -13,14 +13,18 @@ const GifGrid = ({ category }) => {
           color='background'
           className='animate__animated animate__fadeIn'
           fontSize={'30px'}
+          width='90%'
+          borderBottom='6px solid #F2CA52'
+          pl={2}
+          my={2}
         >
           {category}
         </Typography>
-        <Alert sx={{ display: 'flex', width: '100%', mb: 2 }} severity='error'>
+        <Alert sx={{ display: 'flex', width: '100%', my: 2 }} severity='error'>
           <AlertTitle>
             <strong>No results</strong>
           </AlertTitle>
-          Please do another Search
+          Please do an other Search
         </Alert>
       </>
     );
@@ -32,7 +36,6 @@ const GifGrid = ({ category }) => {
         color='background'
         className='animate__animated animate__fadeIn'
         fontSize={'30px'}
-        sx={{}}
         width='90%'
         borderBottom='6px solid #F2CA52'
         pl={2}
