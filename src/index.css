@@ -39,3 +39,11 @@ input {
 .card img {
   max-height: 170px;
 }
+
+.gifLogoDiv {
+  margin: 0 20px;
+}
+
+.gifLogo {
+  height: 55px;
+}

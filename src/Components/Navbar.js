@@ -13,10 +13,13 @@ export const Navbar = () => {
           px: 5,
           py: 2,
         }}
-        color='background'
+        color="background"
       >
-        <Typography color='primary' fontSize={'35px'}>
-          Gif App
+        <div className="gifLogoDiv">
+          <img className="gifLogo" src="/gifWhite.svg" alt="gifLogo" />
+        </div>
+        <Typography color="primary" fontSize={'33px'}>
+          Gif Expert
         </Typography>
       </AppBar>
     </Toolbar>
